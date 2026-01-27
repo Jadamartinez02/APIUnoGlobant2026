@@ -2,6 +2,7 @@ package com.example.clinica.servicios;
 
 import com.example.clinica.modelos.Paciente;
 import com.example.clinica.repositorios.IPacienteRepositorio;
+import com.example.clinica.utiles.Mensaje;
 
 import java.util.List;
 import java.util.Optional;
@@ -25,7 +26,7 @@ public class ServicioPaciente {
         if(datosPaciente.getNombreCompleto()==null || datosPaciente.getNombreCompleto()== "" || datosPaciente.getNombreCompleto().length()<4){
             throw new ResponseStatusException(
                     HttpStatus.CONFLICT,
-                    "El nombre ingresado no cumple con los criterios de nuestro servicio"
+                    Mensaje.ERROR_DE_NOMBRE.getTexto()
             );
         }
 
